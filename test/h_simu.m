@@ -1,3 +1,10 @@
+addpath('../control')
+addpath('..')
+addpath('../plotting')
+global params;
+params.Kp_h = 10;
+params.Kd_h = 5000;
+params.Ki_h = 5;
 g = 9.8;
 m = 1;
 R = 0.1;
