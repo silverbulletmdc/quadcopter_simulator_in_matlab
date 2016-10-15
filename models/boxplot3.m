@@ -19,11 +19,12 @@ function flag = boxplot3(center,rotate,color,size,start)
     end
     figure(1);
     for i = 1:6
-        
+        grid on;
         fill3(x(:,i),y(:,i),z(:,i), color)
         xlim([-5,5]);
         ylim([-5,5]);
         zlim([0,10]);
+        
         hold on;
     end
     flag = 1;

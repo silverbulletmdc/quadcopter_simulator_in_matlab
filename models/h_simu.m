@@ -14,7 +14,7 @@ t = 0:dt:20;
 y_a = zeros(size(t,2));
 tic
 for i = 1 : size(t,2)
-	lift = my_pid(h_desired, y, y_last, dt);
+	lift = h_pid(h_desired, y, y_last, dt);
 	y_last = y;
 	y = y + v_y * dt + (lift - m * g) / m * dt / 2 * dt;
 	v_y = v_y + (lift - m * g) / m * dt; 	

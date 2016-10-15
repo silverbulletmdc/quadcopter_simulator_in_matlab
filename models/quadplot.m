@@ -16,5 +16,4 @@ boxplot3(center,theta,'y',[0.05,0.05,inputs(2)/10],[-0.025,0.25-0.025,0.025]);
 boxplot3(center,theta,'y',[0.05,0.05,inputs(3)/10],[-0.25,-0.025,0.025]);
 boxplot3(center,theta,'b',[0.05,0.05,inputs(4)/10],[-0.025,-0.25,0.025]);
 hold off;
-grid on;
 end
