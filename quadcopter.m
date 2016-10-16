@@ -33,7 +33,7 @@ x = [0; 0; 0];
 x_last = x;
 xdot = zeros(3, 1);
 theta = zeros(3, 1);
-
+theta_last = theta;
 thetadot = zeros(3,1);
 
 % Physical constant
@@ -63,8 +63,9 @@ for t = times
     theta = theta + dt * thetadot;
     xdot = xdot + dt * a;
     x = x + dt * xdot;
-    i = rotor_input(t, x, xdot, theta, thetadot, x_last);
+    i = rotor_input(x, xdot, theta, thetadot, x_last, theta_last);
     x_last = x;
+    theta_last = theta;
 
     if params.using_vr
         copter.translation = x';
@@ -72,7 +73,7 @@ for t = times
     else
         quadplot(x, theta, i)
     end
-    pause(0.001);
+    pause(0.01);
  
 end
 toc
